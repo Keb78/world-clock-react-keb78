@@ -1,15 +1,15 @@
 /* Define the Digital-7 font */
 @font-face {
   font-family: 'Digital-7';
-  src: url('public/font/digital-7.ttf') format('truetype'),
-       url('public/font/digital-7 (italic).ttf') format('truetype');
+  src: url('/public/font/digital-7.ttf') format('truetype'),
+       url('/public/font/digital-7 (italic).ttf') format('truetype');
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Digital-7', sans-serif;
-  background: url('public/background.jpg') no-repeat center center;
+  background: url('/public/background.jpg') no-repeat center center;
   background-size: cover;
   min-height: 100vh;
   display: flex;
