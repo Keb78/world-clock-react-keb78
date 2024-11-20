@@ -10,28 +10,20 @@ Installation
 Follow these steps to set up the project locally:
 
 Clone this repository:
-bash
-Copy code
 git clone https://github.com/Keb78/world-clock-react-keb78.git
+
 Navigate to the project directory:
-bash
-Copy code
 cd world-clock-react-keb78
+
 Install project dependencies:
-bash
-Copy code
 npm install
 Usage
 Start the development server:
-bash
-Copy code
+
 npm run dev
 Open your browser and navigate to the provided local development URL (usually http://localhost:5173).
 Build for Production
 To build the project for production, run:
-
-bash
-Copy code
 npm run build
 This generates the production files in the dist/ directory.
 
@@ -40,10 +32,8 @@ React: JavaScript library for building user interfaces.
 Vite: Modern and fast build tool for frontend development.
 CSS: For styling and responsiveness.
 Project Structure
-Here’s an overview of the folder structure:
 
-php
-Copy code
+Here’s an overview of the folder structure:
 world_clock_react_keb78/
 ├── public/          # Static assets like images and fonts
 ├── src/             # Source files
