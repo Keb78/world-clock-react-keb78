@@ -1,0 +1,300 @@
+/* Define the Digital-7 font */
+@font-face {
+  font-family: 'Digital-7';
+  src: url('public/font/digital-7.ttf') format('truetype'),
+       url('public/font/digital-7 (italic).ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Digital-7', sans-serif;
+  background: url('public/background.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Container for the clocks */
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Individual clock styles */
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  background-color: rgba(17, 17, 17, 0.5);
+  border-radius: 5px;
+  color: yellow;
+  cursor: pointer;
+  border: 1px solid #3ddaf9;
+  outline: none;
+}
+
+.clock:hover {
+  transform: scale(1.2) rotateX(1deg);
+  z-index: 5;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease-in-out;
+}
+
+.city {
+  font-family: "Digital-7", monospace;
+  font-size: 40px;
+  color: #d5dcef;
+  text-shadow: 0 0 10px #3e9706, 
+               0 0 15px #327906, 
+               0 0 20px #1159ac, 
+               0 0 25px #15054f,  
+               0 0 35px #8f0784; 
+}
+
+.time {
+  font-family: "Digital-7", monospace;
+  font-size: 33px;
+  color: #43da0c;
+  text-shadow: 0 0 10px #3e9706, 
+               0 0 15px #327906, 
+               0 0 20px #338203, 
+               0 0 25px #214f05,  
+               0 0 35px #3b8f07; 
+  position: relative;
+  z-index: 40;
+}
+
+/* Highlight dot styles */
+.dot {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: rgb(200, 249, 155);
+  opacity: 0.5;
+  pointer-events: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Default positions for dots */
+.dot-london {
+  left: 48.5%; /* Adjust according to the city's position on the map */
+  top: 31%;
+}
+
+.dot-stockholm {
+  left: 53%; /* Adjust according to the city's position on the map */
+  top: 25%;
+}
+
+.dot-newyork {
+  left: 30%; /* Adjust according to the city's position on the map */
+  top: 30%;
+}
+
+.dot-istanbul {
+  left: 50%; /* Adjust according to the city's position on the map */
+  top: 35%;
+}
+
+.dot-hongkong {
+  left: 70%; /* Adjust according to the city's position on the map */
+  top: 50%;
+}
+
+.dot-losangeles {
+  left: 20%; /* Adjust according to the city's position on the map */
+  top: 46%;
+}
+
+.dot.active {
+  transform: scale(1.8);
+  opacity: 1;
+  background-color: #fff;
+  box-shadow:
+  0 0 6px 3px #fff,  /* inner white */
+  0 0 10px 6px #f0f, /* middle magenta */
+  0 0 14px 9px #0ff; /* outer cyan */
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+  .clock-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .dot-london {
+    left: 48.5%; /* Adjust as needed */
+    top: 31%;
+  }
+
+  .dot-stockholm {
+    left: 53%; /* Adjust as needed */
+    top: 25%;
+  }
+
+  .dot-newyork {
+    left: 30%; /* Adjust as needed */
+    top: 36.5%;
+  }
+
+  .dot-istanbul {
+    left: 56.3%; /* Adjust as needed */
+    top: 37%;
+  }
+
+  .dot-hongkong {
+    left: 77.1%; /* Adjust as needed */
+    top: 48.1%;
+  }
+
+  .dot-losangeles {
+    left: 20%; /* Adjust as needed */
+    top: 46%;
+  }
+}
+
+@media (max-width: 767px) {
+  .clock-container {
+    flex-direction: column;
+  }
+
+  .clock {
+    width: 100%;
+    max-width: 400px;
+  }
+  /* Device-Specific Scaling */
+
+/* iPhone 12 Pro (390px x 844px) */
+@media screen and (min-width: 390px) and (max-width: 844px) and (orientation: portrait) {
+  .clock {
+    width: 90%;
+    padding: 25px;
+  }
+  .city {
+    font-size: 10vw;
+  }
+  .time {
+    font-size: 5.5vw;
+  }
+  .dot-london {
+    left: 45.5%; /* Adjust as needed */
+    top: 34%;
+  }
+
+  .dot-stockholm {
+    left: 62%; /* Adjust as needed */
+    top: 30%;
+  }
+
+  .dot-newyork {
+    left: -2%; /* Adjust as needed */
+    top: 42%;
+  }
+
+  .dot-istanbul {
+    left: 71%; /* Adjust as needed */
+    top: 40%;
+  }
+
+  .dot-hongkong {
+    left: 101%; /* Adjust as needed */
+    top: 55%;
+  }
+
+  .dot-losangeles {
+    left: -4%; /* Adjust as needed */
+    top: 46%;
+  }
+}
+
+/* iPads (768px x 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .clock {
+    width: 70%;
+    padding: 30px;
+  }
+  .city {
+    font-size: 4vw;
+  }
+  .time {
+    font-size: 3.5vw;
+  }
+}
+
+/* General Small Devices */
+@media screen and (max-width: 768px) {
+  .clock {
+    width: 90%;
+    padding: 15px;
+  }
+  .city {
+    font-size: 5vw;
+  }
+  .time {
+    font-size: 4.5vw;
+  }
+  .dot-london {
+    left: 45.5%; /* Adjust as needed */
+    top: 34%;
+  }
+
+  .dot-stockholm {
+    left: 62%; /* Adjust as needed */
+    top: 30%;
+  }
+
+  .dot-newyork {
+    left: -2%; /* Adjust as needed */
+    top: 42%;
+  }
+
+  .dot-istanbul {
+    left: 71%; /* Adjust as needed */
+    top: 40%;
+  }
+
+  .dot-hongkong {
+    left: 101%; /* Adjust as needed */
+    top: 55%;
+  }
+
+  .dot-losangeles {
+    left: -4%; /* Adjust as needed */
+    top: 46%;
+  }
+  
+}
+
+/* General Large Devices */
+@media screen and (min-width: 1025px) {
+  .clock {
+    width: 50%;
+    padding: 40px;
+  }
+  .city {
+    font-size: 3vw;
+  }
+  .time {
+    font-size: 2.5vw;
+  }
+}
+}
